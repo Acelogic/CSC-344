@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>CCM Demo Page</title>
+    <link href="../demo.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <div class="block">
+      <h1>CSC 366 Standard Demo Page</h1>
+      <p>
+	The following text was written to the standard output stream when the <tt>prolang_v1.pro</tt> program was executed from swi-prolog.
+      </p>
+      <div class="block">
+	<h2></h2>
+	<p>
+	  <pre>
+      mcruz@arch-desktop$ swipl prolang_v1.pro              
+      Welcome to SWI-Prolog (threaded, 64 bits, version 7.6.4)
+      SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+      Please run ?- license. for legal details.
+      
+      For online help and background, visit http://www.swi-prolog.org
+      For built-in help, use ?- help(Topic). or ?- apropos(Word).
+      
+      ?- module(test).
+      Warning: test is not a current module (created)
+      true.
+      
+      test:  ?- consult('proglang_v1.pro').
+      true.
+      
+      test:  ?- listing.
+      
+      history(smalltalk, inventor('Alan Kay'), date(1980)).
+      history(lisp, inventor('John McCarthy'), date(1959)).
+      history(prolog, inventor('Alan Colmeraur'), date(1971)).
+      
+      essense(smalltalk, object, 'message passing').
+      essense(lisp, list, 'recursive functions').
+      essense(prolog, relation, 'logical inferencing').
+      
+      language(smalltalk).
+      language(lisp).
+      language(prolog).
+      true.
+      
+      test:  ?- halt.
+
+	  </pre>
+	</p>
+      </div>
+    </div>
+
+  </div>
+    
+</body>
+</html>
+
+
