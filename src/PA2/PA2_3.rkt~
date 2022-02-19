@@ -23,15 +23,6 @@
       )
 )
 
-(define (triangluar n) 
-  (print "hello")
- )
-
-(define (sigma n y)
-  (print "testing")
-)
-
-
 ;-----------------------
 ;; Testing Cases
 ;-----------------------
