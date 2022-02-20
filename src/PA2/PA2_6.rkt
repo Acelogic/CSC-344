@@ -3,7 +3,8 @@
 
 #lang racket
 ( require 2htdp/image )
-;; Task 6: Dominos
+;; Task 6: Dominos (Done)
+
 ;-------------------------------------------------------------------------------
 ; Requirements
 ;
@@ -29,20 +30,65 @@
 ;
 ; - Bind one variable to a blank tile and another to a pip
 ;
-( define blank-tile ( square side-of-tile "solid" "black" ) )
-( define ( pip ) ( circle radius-of-pip "solid" "white" ) )
+( define blank-tile
+   ( square side-of-tile "solid" "black" )
+)
+
+( define ( pip )
+   ( circle radius-of-pip "solid" "white" )
+)
 ;-------------------------------------------------------------------------------
 ; The basic tiles
 ;
 ; - Bind one variable to each of the basic tiles
 ;
-( define basic-tile1 ( overlay ( pip ) blank-tile ) )
+
+
+( define basic-tile1
+   ( overlay ( pip ) blank-tile )
+)
+
+
 ( define basic-tile2
-( overlay/offset ( pip ) d d
-( overlay/offset ( pip ) nd nd blank-tile)
+   ( overlay/offset ( pip ) d d
+    ( overlay/offset ( pip ) nd nd blank-tile)
+   )
 )
+
+
+( define basic-tile3
+   ( overlay ( pip ) basic-tile2 )
 )
-( define basic-tile3 ( overlay ( pip ) basic-tile2 ) )
+
+
+( define basic-tile4
+   ( overlay/offset ( pip ) d d
+    ( overlay/offset ( pip ) nd d
+     ( overlay/offset ( pip ) nd nd
+      ( overlay/offset ( pip ) d nd blank-tile)))
+    )
+)
+
+( define basic-tile5
+   (overlay (pip)
+      ( overlay/offset ( pip ) d d basic-tile4 )
+  )
+)
+
+
+( define basic-tile6
+   ( overlay/offset ( pip ) nd d
+    ( overlay/offset ( pip ) 0.5 d
+     ( overlay/offset ( pip ) d d
+      ( overlay/offset ( pip ) 0.5 nd
+       ( overlay/offset ( pip ) d nd
+        ( overlay/offset ( pip ) nd nd blank-tile)))))
+    )
+  )
+
+
+
+
 ;-------------------------------------------------------------------------------
 ; The framed framed tiles
 ;
@@ -53,26 +99,44 @@
 ( define tile1 ( overlay frame basic-tile1 ) )
 ( define tile2 ( overlay frame basic-tile2 ) )
 ( define tile3 ( overlay frame basic-tile3 ) )
+( define tile4 ( overlay frame basic-tile4 ) )
+( define tile5 ( overlay frame basic-tile5 ) )
+( define tile6 ( overlay frame basic-tile6 ) )
 ;-------------------------------------------------------------------------------
 ; Domino generator
 ;
 ; - Funtion to generate a domino
 ;
 ( define ( domino a b )
-( beside ( tile a ) ( tile b ) )
+   ( beside ( tile a ) ( tile b ) )
 )
+
 ( define ( tile x )
    ( cond
-( ( = x 0 ) tile0 )
-( ( = x 1 ) tile1 )
-( ( = x 2 ) tile2 )
-( ( = x 3 ) tile3 )
-)
-)
+      ( ( = x 0 ) tile0 )
+      ( ( = x 1 ) tile1 )
+      ( ( = x 2 ) tile2 )
+      ( ( = x 3 ) tile3 )
+      ( ( = x 4 ) tile4 )
+      ( ( = x 5 ) tile5 )
+      ( ( = x 6 ) tile6 )
+      )
+   )
 
 ;-----------------------
 ;; Testing Cases
 ;-----------------------
+(domino 0 1)
+(domino 3 2)
+(domino 1 3)
+(domino 2 0)
+(domino 3 3)
+(domino 4 5)
+(domino 6 6)
+(domino 0 5)
+(domino 4 3)
+(domino 1 2)
+
 
 
 

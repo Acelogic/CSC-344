@@ -4,6 +4,7 @@
 #lang racket
 ( require 2htdp/image )
 ;; Task 6: Dominos
+
 ;-------------------------------------------------------------------------------
 ; Requirements
 ;

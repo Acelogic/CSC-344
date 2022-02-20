@@ -3,9 +3,7 @@
 
 #lang racket
 ( require 2htdp/image )
-
 ;; Task 5: Channeling Frank Stella (Done)
-
 
 ( define ( random-color ) ( color ( rgb-value ) ( rgb-value ) ( rgb-value ) ) )
 ( define ( rgb-value ) ( random 256 ) )
