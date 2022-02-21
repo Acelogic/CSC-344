@@ -8,9 +8,11 @@
 ( define ( square n )
    ( * n n )
 )
+
 ( define ( cube n )
    ( * n n n )
 )
+
 ( define ( sequence name n )
    ( cond
       ( ( = n 1 )
