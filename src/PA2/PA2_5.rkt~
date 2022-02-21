@@ -38,4 +38,4 @@
 )
 
 ;; Testing
-;;(stella 400 20 (random-color) (random-color))
+(stella 400 20 (random-color) (random-color))
