@@ -5,56 +5,56 @@
 
 ;; Task 2: List Processing References and Constructors
 
-;;( define languages '(racket prolog haskell rust))
+( define languages '(racket prolog haskell rust))
 
-;;( quote languages)
+( quote languages)
 
-;;( car languages)
+( car languages)
 
-;;( cdr languages)
+( cdr languages)
 
-;;( car ( cdr languages))
+( car ( cdr languages))
 
-;;( cdr ( cdr languages))
+( cdr ( cdr languages))
 
-;;(cadr languages)
+(cadr languages)
 
-;;(cddr languages)
+(cddr languages)
 
-;;(first languages)
+(first languages)
 
-;;(second languages)
+(second languages)
 
-;;(third languages)
+(third languages)
 
-;;(list-ref languages 2)
+(list-ref languages 2)
 
-;;(define numbers '(1 2 3))
-;;(define letters '(a b c))
-;;(cons numbers letters)
+(define numbers '(1 2 3))
+(define letters '(a b c))
+(cons numbers letters)
 
-;;( list numbers letters)
+( list numbers letters)
 
-;;( append numbers letters )
+( append numbers letters )
 
-;;( define animals '(ant bat cat dot eel) )
-;;( car ( cdr ( cdr ( cdr animals ) ) ) )
+( define animals '(ant bat cat dot eel) )
+( car ( cdr ( cdr ( cdr animals ) ) ) )
 
-;;( cadddr animals )
+( cadddr animals )
 
-;;( list-ref animals 3 )
+( list-ref animals 3 )
 
-;;( define a 'apple )
-;;( define b 'peach )
-;;( define c 'cherry )
-;;( cons b ( cons c ' () ) )
+( define a 'apple )
+( define b 'peach )
+( define c 'cherry )
+( cons b ( cons c ' () ) )
 
-;;( list a b c )
+( list a b c )
 
-;;( define x '(one fish))
-;;( define y '(two fish))
-;;( cons ( car x) ( cons ( car ( cdr x ) ) y ) )
+( define x '(one fish))
+( define y '(two fish))
+( cons ( car x) ( cons ( car ( cdr x ) ) y ) )
 
-;;( append x y )
+( append x y )
 
           

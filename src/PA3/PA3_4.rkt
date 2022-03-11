@@ -93,6 +93,24 @@
     [(eq? 'A card-rank) 14]
     [else 0]))
 
+(define (card-name card)
+  (cond
+    [(equal? 1 card) "One"]
+    [(equal? 2 card) "Two"]
+    [(equal? 3 card) "Three"]
+    [(equal? 4 card) "Four"]
+    [(equal? 5 card) "Five"]
+    [(equal? 6 card) "Six"]
+    [(equal? 7 card) "Seven"]
+    [(equal? 8 card) "Eight"]
+    [(equal? 9 card) "Nine"]
+    [(equal? 'X card) "Ten"]
+    [(equal? 'J card) "Jack"]
+    [(equal? 'Q card) "Queen"]
+    [(equal? 'K card) "King"]
+    [(equal? 'A card) "Ace"]
+    )
+  )
 
 ;; Display the higher rank card
 (define (higher-rank card1 card2)
@@ -140,13 +158,48 @@
                 ( ( equal? ( car card1 ) ( car card2 ) )
                   ( display " Pair of " ) ( display ( car card1 ) ) ( display "'s" ) )
                 ( else
-                  ( display high ) ( display " High " ) ) ) ) ) ) ) )
+                  ( display high ) ( display " High " ) ) ) ) ) ) )
+
+ )
 
   
 
 (trace higher-rank)
 
 
+;; Classify-two-cards
+(define (classify-two-cards card-pair)
+   ( define card1 ( car card-pair ) )
+   ( define card2 ( cadr card-pair ) )
+   ( define card1-rank (index-rank card1))
+   ( define card2-rank (index-rank card2))
+   ( define card1-suit (suit card1))
+   ( define card2-suit (suit card2))
+   ( define higher ( higher-rank card1 card2 ) )
+   ( define higher-name (card-name higher))
+   ( display card-pair )( display ": " )
+   ( cond
+      ( ( equal? card1-suit card2-suit )
+        ( cond
+           ( ( or
+               ( = 1 ( - card1-rank card2-rank))
+               ( = 1 ( - card2-rank card1-rank)))
+             (classify-two-cards (pick-two-cards))( display higher-name ( display " High Straight Flush " ) ) )
+           ( else
+             ( display higher-name ) ( display " High Flush " ) ) ) )
+      ( else
+        ( cond
+           ( ( or
+               ( = 1 ( - card1-rank card2-rank))
+               ( = 1 ( - card2-rank card1-rank))
+               ( display higher-name ) ( display " High Straight " ) ) )
+           ( else
+             ( cond
+                ( ( equal? ( car card1 ) ( car card2 ) )
+                  ( display " Pair of " ) ( display higher-name ) ( display "'s" ) )
+                ( else
+                  ( display higher-name ) ( display " High " ) ) ) ) ) ) ) 
 
+)
     
 
