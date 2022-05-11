@@ -1,16 +1,42 @@
 
 *{ 
-
     font-family: 'VT323', monospace;
   }
 
+header {
+    background: #252525;
+    height: 70px;
+    line-height: 70px;
+}
 
 body {
-    background-image: linear-gradient( 60deg, black,rgb(9, 138, 121), black);
+   /* background-image: linear-gradient( 60deg, black,rgb(9, 138, 121), black); */
+    background-color: #292c2f;
     font-family: serif;
     font-size: 22;
     color: white;
 }
+
+.gradient {
+    height: calc(100% - 70px);
+    background-image: -webkit-linear-gradient(270deg, #4ac1ff, #795bb0);
+    background-image: -moz-linear-gradient(270deg, #4ac1ff, #795bb0);
+    background-image: -o-linear-gradient(270deg, #4ac1ff, #795bb0);
+    background-image: -ms-linear-gradient(270deg, #4ac1ff, #795bb0);
+    background-image: linear-gradient(180deg, #4ac1ff, #795bb0);
+    position: absolute;
+    width: 100%;
+}
+
+.prolang {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    height: auto;
+
+}
+
 
 a:link {color: rgb(195, 0, 255);}
 a:visited {color:lightblue;}
@@ -353,12 +379,7 @@ param {
     font-style: italic;
 }
 
-.prolang{
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    max-width: 50%;
-    height: auto;
-    
-} 
+
+
+
 
